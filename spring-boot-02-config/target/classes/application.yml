@@ -1,0 +1,13 @@
+person:
+  name: zhangsan
+  age: 18
+  boss: false
+  birth: 2017/12/12
+  map: {k1: v1,k2: v2}
+  list:
+    - zhangsan
+    - lisi
+    - wanggang
+  dog:
+    name: gogo
+    age: 2
