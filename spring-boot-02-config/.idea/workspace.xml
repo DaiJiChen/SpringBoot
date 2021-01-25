@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e93b55a1-6137-49ea-b089-243b334b9054" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/bean/PropertySource_Annotation_Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/demo.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/demo.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/bean/service/HelloService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/config/MyAppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sit/jichen/bean/person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/bean/person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/sit/jichen/SpringBoot02ConfigApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/sit/jichen/SpringBoot02ConfigApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sit/jichen/bean/person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sit/jichen/bean/person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/sit/jichen/SpringBoot02ConfigApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/sit/jichen/SpringBoot02ConfigApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

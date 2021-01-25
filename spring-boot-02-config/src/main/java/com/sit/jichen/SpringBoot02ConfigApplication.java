@@ -2,7 +2,9 @@ package com.sit.jichen;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
 
+@ImportResource
 @SpringBootApplication
 public class SpringBoot02ConfigApplication {
 
