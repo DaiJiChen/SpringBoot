@@ -2,6 +2,7 @@ package com.sit.jichen.bean;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -15,16 +16,15 @@ prefix = "person", tell springBoot use which block of configuration file.
 
 @Component, only components that are belong to the container can use @ConfigurationProperties functiooon provided by container
  */
-
 @Component
-//@ConfigurationProperties(prefix = "person")
+@ConfigurationProperties(prefix = "person")
 public class person {
 
-    @Value("${person.name}")
+    //@Value("${person.name}")
     private String name;
-    @Value("true")
+    //@Value("true")
     private Boolean boss;
-    @Value("#{11*3}")
+    //@Value("#{11*3}")
     private int age;
     private Date birth;
 
@@ -35,7 +35,7 @@ public class person {
     @Override
     public String toString() {
         return "person{" +
-                "ame='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", age=" + age +
                 ", boss=" + boss +
                 ", birth=" + birth +

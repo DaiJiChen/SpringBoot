@@ -1,0 +1,13 @@
+demo:
+  name: Jichen
+  age: 33
+  boss: false
+  birth: 2020/12/12
+  map: {k1: v1,k2: v2}
+  list:
+    - zhangsan
+    - lisi
+    - wanggang
+  dog:
+    name: gogo
+    age: 2
