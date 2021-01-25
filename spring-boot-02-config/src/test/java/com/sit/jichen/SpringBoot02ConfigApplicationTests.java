@@ -18,15 +18,6 @@ class SpringBoot02ConfigApplicationTests {
 	@Autowired
 	PropertySource_Annotation_Demo demo;
 
-	@Autowired
-	ApplicationContext ioc;
-
-	@Test
-	public void testHelloService() {
-		boolean b = ioc.containsBean("helloService");
-		System.out.println(b);
-	}
-
 	@Test
 	void contextLoads() {
 		System.out.println(person);

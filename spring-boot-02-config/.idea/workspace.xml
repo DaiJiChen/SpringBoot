@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e93b55a1-6137-49ea-b089-243b334b9054" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/bean/service/HelloService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/config/MyAppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sit/jichen/SpringBoot02ConfigApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/SpringBoot02ConfigApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/sit/jichen/SpringBoot02ConfigApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/sit/jichen/SpringBoot02ConfigApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sit/jichen/SpringBoot02ConfigApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sit/jichen/SpringBoot02ConfigApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sit/jichen/bean/PropertySource_Annotation_Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sit/jichen/bean/PropertySource_Annotation_Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/sit/jichen/SpringBoot02ConfigApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/sit/jichen/SpringBoot02ConfigApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +52,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.SpringBoot02ConfigApplicationTests">
+  <component name="RunManager" selected="Application.SpringBoot02ConfigApplication">
     <configuration name="SpringBoot02ConfigApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sit.jichen.SpringBoot02ConfigApplication" />
       <module name="spring-boot-02-config" />
@@ -75,8 +83,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SpringBoot02ConfigApplicationTests" />
         <item itemvalue="Application.SpringBoot02ConfigApplication" />
+        <item itemvalue="JUnit.SpringBoot02ConfigApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -102,25 +110,25 @@
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="754" y="-844" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1611574082379" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1611576128675">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1611584533460">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1611576128675" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1611584533460" />
     <state width="1860" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611481537335" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1611576128674">
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1611584533459">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1611576128674" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1611584533459" />
     <state width="1860" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611481537335" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1611576128674">
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1611584533459">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1611576128674" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1611584533459" />
     <state width="1860" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611481537334" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1611576128674">
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1611584533459">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1611576128674" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1611584533459" />
     <state width="1860" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611481537335" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1611574539907">
       <screen x="0" y="-1080" width="1920" height="1040" />

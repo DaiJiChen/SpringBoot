@@ -1,6 +1,10 @@
+spring:
+  profiles:
+    active: dev
+
 person:
-  name: zhangsan
-  age: 18
+  name: zhangsan${random.uuid}
+  age: ${random.int}
   boss: false
   birth: 2017/12/12
   map: {k1: v1,k2: v2}
@@ -9,5 +13,5 @@ person:
     - lisi
     - wanggang
   dog:
-    name: gogo
+    name: ${person.name}_dog
     age: 2
