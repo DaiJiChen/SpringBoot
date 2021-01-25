@@ -1,5 +1,6 @@
 package com.sit.jichen.bean;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -16,10 +17,15 @@ prefix = "person", tell springBoot use which block of configuration file.
  */
 
 @Component
-@ConfigurationProperties(prefix = "person")
+//@ConfigurationProperties(prefix = "person")
 public class person {
+
+    @Value("${person.name}")
     private String name;
+    @Value("true")
     private Boolean boss;
+    @Value("#{11*3}")
+    private int age;
     private Date birth;
 
     private Map<String, Object> map;
@@ -30,6 +36,7 @@ public class person {
     public String toString() {
         return "person{" +
                 "ame='" + name + '\'' +
+                ", age=" + age +
                 ", boss=" + boss +
                 ", birth=" + birth +
                 ", maps=" + map +
