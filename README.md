@@ -49,6 +49,49 @@ For example: If a Project A (slf4j + logback) : Spring(Commoms-logging), Hiberna
 ![slf4j-legacy](http://www.slf4j.org/images/legacy.png)
 
 
+#### Legacy example in Spring-boot
+![legacy example in springboot](https://github.com/DaiJiChen/Spring/blob/main/images/logging-bridge-module-example-in%20spring-boot.jpg)
+
+**If we import another framework, we only need to remove the default framework, spring-boot already configured SLF4j bridging modules for us**
+
+```xml
+<dependency>
+  <groudId>org.springframework</groupId>
+  <artifactId>spring-core</artifactId>
+  <exclusions>
+    <exclusion>
+      <groupId>commons-logging</groupId>
+      <artifactId>common-logging</artifactId>
+    </exclusion>
+  </exclusions>
+</dependency>
+```
+
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+class SpringBoot03LoggingApplicationTests {
+
+	Logger logger = LoggerFactory.getLogger(getClass());
+
+	@Test
+	void contextLoads() {
+  
+    // priority level from low to high
+		logger.trace("trace");
+		logger.debug("debug");
+		// springboot default use info level, we can modify level in configuration file
+		logger.info("info");
+		logger.warn("warnning");
+		logger.error("error");
+	}
+}
+```
 
 
+### Spring boot custom log config
+See: [spring boot official manual](https://docs.spring.io/spring-boot/docs/2.1.1.RELEASE/reference/html/boot-features-logging.html#boot-features-custom-log-configuration)
+
+## switch logging framework
 
