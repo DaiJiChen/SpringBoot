@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffeddb08-1434-4afd-ae44-3b49d5ad5bb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../spring-boot-02-config-02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-boot-02-config-02/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,5 +41,11 @@
       <updated>1611587690222</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="342" y="-852" key="new project wizard" timestamp="1611628783125">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="342" y="-852" key="new project wizard/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1611628783125" />
   </component>
 </project>
