@@ -283,3 +283,29 @@ Special tokens:
 ```
 
 
+## Spring MVC condiguration
+
+https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications
+
+### 1. Spring MVC Auto-Configuration
+
+Spring Boot provides auto-configuration for Spring MVC that works well with most applications.
+
+#### auto-configuration includes:
+
+- Inclusion of ViewResolver: `ContentNegotiatingViewResolver` and `BeanNameViewResolver` beans.
+
+- Support for serving static resources, including support for WebJars (see below).
+
+- Automatic registration of Converter, GenericConverter, Formatter beans.
+
+- Support for HttpMessageConverters (see below).
+
+- Automatic registration of MessageCodesResolver (see below).
+
+- Static index.html support.
+
+- Custom Favicon support (see below).
+
+- Automatic use of a ConfigurableWebBindingInitializer bean (see below).
+
