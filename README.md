@@ -191,7 +191,7 @@ private Resource getWelcomePage() {
 
 ## thymeleaf
 
-####Improt starter
+#### Improt starter
 
 ```xml
 <properties>
