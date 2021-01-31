@@ -189,3 +189,97 @@ private Resource getWelcomePage() {
         }
 ```
 
+## thymeleaf
+
+####Improt starter
+
+```xml
+<properties>
+        <!--	change default thymeleaf version	-->
+	<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
+	<thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
+</properties>
+
+<dependencies>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+</dependencies>
+```
+
+#### expressions
+
+```properties
+Simple expressions:
+    Variable Expressions: ${...}：gt variable；OGNL；
+    		1）、get property or call method of an object
+    		2）、使用内置的基本对象：
+    			#ctx : the context object.
+    			#vars: the context variables.
+                #locale : the context locale.
+                #request : (only in Web Contexts) the HttpServletRequest object.
+                #response : (only in Web Contexts) the HttpServletResponse object.
+                #session : (only in Web Contexts) the HttpSession object.
+                #servletContext : (only in Web Contexts) the ServletContext object.
+                
+                ${session.foo}
+            3）、内置的一些工具对象：
+#execInfo : information about the template being processed.
+#messages : methods for obtaining externalized messages inside variables expressions, in the same way as they would be obtained using #{…} syntax.
+#uris : methods for escaping parts of URLs/URIs
+#conversions : methods for executing the configured conversion service (if any).
+#dates : methods for java.util.Date objects: formatting, component extraction, etc.
+#calendars : analogous to #dates , but for java.util.Calendar objects.
+#numbers : methods for formatting numeric objects.
+#strings : methods for String objects: contains, startsWith, prepending/appending, etc.
+#objects : methods for objects in general.
+#bools : methods for boolean evaluation.
+#arrays : methods for arrays.
+#lists : methods for lists.
+#sets : methods for sets.
+#maps : methods for maps.
+#aggregates : methods for creating aggregates on arrays or collections.
+#ids : methods for dealing with id attributes that might be repeated (for example, as a result of an iteration).
+
+    Selection Variable Expressions: *{...}：
+    	补充：配合 th:object="${session.user}：
+   <div th:object="${session.user}">
+    <p>Name: <span th:text="*{firstName}">Sebastian</span>.</p>
+    <p>Surname: <span th:text="*{lastName}">Pepper</span>.</p>
+    <p>Nationality: <span th:text="*{nationality}">Saturn</span>.</p>
+    </div>
+    
+    Message Expressions: #{...}：
+    Link URL Expressions: @{...}：
+    		@{/order/process(execId=${execId},execType='FAST')}
+    Fragment Expressions: ~{...}：
+    		<div th:insert="~{commons :: main}">...</div>
+    		
+Literals
+      Text literals: 'one text' , 'Another one!' ,…
+      Number literals: 0 , 34 , 3.0 , 12.3 ,…
+      Boolean literals: true , false
+      Null literal: null
+      Literal tokens: one , sometext , main ,…
+Text operations:
+    String concatenation: +
+    Literal substitutions: |The name is ${name}|
+Arithmetic operations:
+    Binary operators: + , - , * , / , %
+    Minus sign (unary operator): -
+Boolean operations:
+    Binary operators: and , or
+    Boolean negation (unary operator): ! , not
+Comparisons and equality:
+    Comparators: > , < , >= , <= ( gt , lt , ge , le )
+    Equality operators: == , != ( eq , ne )
+Conditional operators:
+    If-then: (if) ? (then)
+    If-then-else: (if) ? (then) : (else)
+    Default: (value) ?: (defaultvalue)
+Special tokens:
+    No-Operation: _ 
+```
+
+
