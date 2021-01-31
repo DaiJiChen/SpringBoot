@@ -93,5 +93,99 @@ class SpringBoot03LoggingApplicationTests {
 ### Spring boot custom log config
 See: [spring boot official manual](https://docs.spring.io/spring-boot/docs/2.1.1.RELEASE/reference/html/boot-features-logging.html#boot-features-custom-log-configuration)
 
-## switch logging framework
+
+
+## Web Development
+
+### Using SpringBoot:
+1. Create a spring boot project, celect modules we need;
+2. SpringBoot will auto configure all the modules we need;
+3. Do little modification as we need.
+
+### Auto Configuration:
+```xml
+xxxxxxxxxAutoConfiguration
+xxxxxxxxxProperties:
+```
+
+### SpringBoot对静态资源的映射规则：
+
+```java
+	protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+            super.addResourceHandlers(registry);
+            if (!this.resourceProperties.isAddMappings()) {
+                logger.debug("Default resource handling disabled");
+            } else {
+                ServletContext servletContext = this.getServletContext();
+                this.addResourceHandler(registry, "/webjars/**", "classpath:/META-INF/resources/webjars/");
+                this.addResourceHandler(registry, this.mvcProperties.getStaticPathPattern(), (registration) -> {
+                    registration.addResourceLocations(this.resourceProperties.getStaticLocations());
+                    if (servletContext != null) {
+                        registration.addResourceLocations(new Resource[]{new ServletContextResource(servletContext, "/")});
+                    }
+
+                });
+            }
+        }
+```
+
+#### 1. For all '''/webjars/xx''' , find resource in '''classpath:/META-INF/resources/webjars/'''
+
+webajrs: import static resourcs in the format of a jar package.
+
+https://www.webjars.org/
+
+![webjarStructure](https://github.com/DaiJiChen/Spring/blob/main/images/webjar-structure.png?raw=true)
+
+http://localhost:8080/webjars/jquery/3.5.1/jquery.js
+
+```xml
+		<!--	add dependency for jquery-->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.5.1</version>
+		</dependency>
+```
+
+#### 2. for static resource directory "/**", find in 4 directories below.
+
+```java
+CLASSPATH_RESOURCE_LOCATIONS = new String[]{
+	"classpath:/META-INF/resources/", 
+	"classpath:/resources/", 
+	"classpath:/static/", 
+	"classpath:/public/"};
+```
+
+Example: localhost:8080/asserts/js/Chart.min.js
+
+![static_res_structure](static-res.jpg)
+
+
+#### 3. welcome page: find index.html under static resources directory
+
+localhost:8080/
+
+```java
+private Resource getWelcomePage() {
+            String[] var1 = this.resourceProperties.getStaticLocations();
+            int var2 = var1.length;
+
+            for(int var3 = 0; var3 < var2; ++var3) {
+                String location = var1[var3];
+                Resource indexHtml = this.getIndexHtml(location);
+                if (indexHtml != null) {
+                    return indexHtml;
+                }
+            }
+
+            ServletContext servletContext = this.getServletContext();
+            if (servletContext != null) {
+                return this.getIndexHtml((Resource)(new ServletContextResource(servletContext, "/")));
+            } else {
+                return null;
+            }
+        }
+```
 
