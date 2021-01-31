@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="505e57fe-4d37-45df-a8f9-2b071c666331" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-03-logging/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-boot-03-logging/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1noWaQDaWV6aas4Jh6LvX1YvMvl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringBoot02WebRestfulcrudApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sit.jichen.SpringBoot02WebRestfulcrudApplication" />
+      <module name="spring-boot-02-web-restfulcrud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sit.jichen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SpringBoot02WebRestfulcrudApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="505e57fe-4d37-45df-a8f9-2b071c666331" name="Default Changelist" comment="" />
+      <created>1612056987003</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612056987003</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1904" height="286" key="GridCell.Tab.0.bottom" timestamp="1612057660749">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1904" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612057660749" />
+    <state width="1904" height="286" key="GridCell.Tab.0.center" timestamp="1612057660748">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1904" height="286" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612057660748" />
+    <state width="1904" height="286" key="GridCell.Tab.0.left" timestamp="1612057660747">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1904" height="286" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612057660747" />
+    <state width="1904" height="286" key="GridCell.Tab.0.right" timestamp="1612057660748">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1904" height="286" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612057660748" />
+    <state x="330" y="-850" key="new project wizard" timestamp="1612061282819">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="330" y="-850" key="new project wizard/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612061282819" />
+    <state x="611" y="-849" width="672" height="678" key="search.everywhere.popup" timestamp="1612061130854">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="611" y="-849" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612061130854" />
+  </component>
+</project>
