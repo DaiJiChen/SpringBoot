@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.sit.jichen.SpringBoot02WebRestfulcrudApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.215 s - in com.sit.jichen.SpringBoot02WebRestfulcrudApplicationTests

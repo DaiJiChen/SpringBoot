@@ -2,18 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="505e57fe-4d37-45df-a8f9-2b071c666331" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/public/test-res-access.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/asserts/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/asserts/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/asserts/css/signin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/asserts/img/bootstrap-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/asserts/js/Chart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/asserts/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/asserts/js/feather.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/asserts/js/jquery-3.2.1.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/asserts/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_12_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_12_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/config/myMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/dao/DepartmentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/dao/EmployeeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/entities/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/entities/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-02-web-restfulcrud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-02-web-restfulcrud.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sit/jichen/SpringBoot02WebRestfulcrudApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/SpringBoot02WebRestfulcrudApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sit/jichen/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sit/jichen/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/test-res-access.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sit/jichen/SpringBoot02WebRestfulcrudApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sit/jichen/SpringBoot02WebRestfulcrudApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sit/jichen/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sit/jichen/controller/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/test-res-access.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,16 +71,19 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Github_repos\Spring\spring-boot-02-web-restfulcrud\src\main\resources\templates" />
+      <recent name="D:\Github_repos\Spring\spring-boot-02-web-restfulcrud\src\main\java\com\sit\jichen" />
+      <recent name="D:\Github_repos\Spring\spring-boot-02-web-restfulcrud\src\main\resources\static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Github_repos\Spring\spring-boot-02-web-restfulcrud\src\main\resources\public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Github_repos\Spring\spring-boot-02-web-restfulcrud\src\main\resources\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -103,33 +120,71 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1921" height="286" key="GridCell.Tab.0.bottom" timestamp="1612065030016">
+    <state x="765" y="-850" key="#com.intellij.ide.util.MemberChooser" timestamp="1612152154510">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1921" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612065030016" />
-    <state width="1921" height="286" key="GridCell.Tab.0.center" timestamp="1612065030013">
+    <state x="765" y="-850" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612152154510" />
+    <state width="1921" height="430" key="GridCell.Tab.0.bottom" timestamp="1612152391110">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1921" height="286" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612065030013" />
-    <state width="1921" height="286" key="GridCell.Tab.0.left" timestamp="1612065030013">
+    <state width="1921" height="430" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612152391110" />
+    <state width="1921" height="430" key="GridCell.Tab.0.center" timestamp="1612152391109">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1921" height="286" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612065030013" />
-    <state width="1921" height="286" key="GridCell.Tab.0.right" timestamp="1612065030014">
+    <state width="1921" height="430" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612152391109" />
+    <state width="1921" height="430" key="GridCell.Tab.0.left" timestamp="1612152391109">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="1921" height="286" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612065030014" />
+    <state width="1921" height="430" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612152391109" />
+    <state width="1921" height="430" key="GridCell.Tab.0.right" timestamp="1612152391110">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="430" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612152391110" />
+    <state width="1921" height="356" key="GridCell.Tab.1.bottom" timestamp="1612147241565">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="356" key="GridCell.Tab.1.bottom/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612147241565" />
+    <state width="1921" height="356" key="GridCell.Tab.1.center" timestamp="1612147241564">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="356" key="GridCell.Tab.1.center/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612147241564" />
+    <state width="1921" height="356" key="GridCell.Tab.1.left" timestamp="1612147241564">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="356" key="GridCell.Tab.1.left/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612147241564" />
+    <state width="1921" height="356" key="GridCell.Tab.1.right" timestamp="1612147241564">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="356" key="GridCell.Tab.1.right/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612147241564" />
     <state x="463" y="-914" key="SettingsEditor" timestamp="1612065808160">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
     <state x="463" y="-914" key="SettingsEditor/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612065808160" />
-    <state x="330" y="-850" key="new project wizard" timestamp="1612061282819">
+    <state x="435" y="-821" width="1050" height="524" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1612144416699">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state x="330" y="-850" key="new project wizard/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612061282819" />
-    <state x="611" y="-849" width="672" height="678" key="search.everywhere.popup" timestamp="1612065805654">
+    <state x="435" y="-821" width="1050" height="524" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612144416699" />
+    <state x="330" y="-850" key="new project wizard" timestamp="1612146996808">
       <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
-    <state x="611" y="-849" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612065805654" />
+    <state x="330" y="-850" key="new project wizard/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612146996808" />
+    <state x="611" y="-849" width="672" height="678" key="search.everywhere.popup" timestamp="1612144303701">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="611" y="-849" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1612144303701" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$USER_HOME$/.m2/repository/org/springframework/spring-webmvc/5.3.3/spring-webmvc-5.3.3.jar!/org/springframework/web/servlet/DispatcherServlet.class</url>
+          <line>498</line>
+          <properties class="org.springframework.web.servlet.DispatcherServlet" method="doDispatch">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
