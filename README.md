@@ -283,7 +283,7 @@ Special tokens:
 ```
 
 
-## Spring MVC condiguration
+## Spring MVC configuration
 
 https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications
 
@@ -295,17 +295,63 @@ Spring Boot provides auto-configuration for Spring MVC that works well with most
 
 - Inclusion of ViewResolver: `ContentNegotiatingViewResolver` and `BeanNameViewResolver` beans.
 
-- Support for serving static resources, including support for WebJars (see below).
+	- `ContentNegotiatingViewResolver` combines all viewResolver
+	
+	- we can add a viewResolver to the container and it will be automatically integrted.
 
-- Automatic registration of Converter, GenericConverter, Formatter beans.
+- Support for serving static resources, including support for WebJars.
 
-- Support for HttpMessageConverters (see below).
+	- static resource directory and webjars
 
-- Automatic registration of MessageCodesResolver (see below).
+- Automatic registration of `Converter`, `GenericConverter`, `Formatter` beans.
 
-- Static index.html support.
+	- Converter: 转换器; data from page is text, Converter translate it into format we need such as int, boolean, object, etc.
+	
+	- Formatter: 格式化器; string "2017-12-17" --> Data object
+```java
+	@Bean
+        public FormattingConversionService mvcConversionService() {
+            Format format = this.mvcProperties.getFormat();
+            WebConversionService conversionService = new WebConversionService((new DateTimeFormatters())
+	    .dateFormat(format.getDate())
+	    .timeFormat(format.getTime())
+	    .dateTimeFormat(format.getDateTime()));
+	    
+            this.addFormatters(conversionService);
+            return conversionService;
+        }
+	
+	public void addFormatters(FormatterRegistry registry) {
+            ApplicationConversionService.addBeans(registry, this.beanFactory);
+        }
+```
 
-- Custom Favicon support (see below).
+- Support for `HttpMessageConverters`.
 
-- Automatic use of a ConfigurableWebBindingInitializer bean (see below).
+	- `HttpMessageConverters` is used by springMVC to convert Http request and response; User -> json; 
+	
+	- `HttpMessageConverters` get all HttpMessageConverter from container. we can add our own HttpMessageConverter to container（@Bean, @Component
 
+- Automatic registration of `MessageCodesResolver` (see below).
+
+- Static `index.html` support.
+
+- Custom `Favicon` support.
+
+- Automatic use of a `ConfigurableWebBindingInitializer` bean.
+
+**org.springframework.boot.autoconfigure**  : all auto configuration for web
+
+If you want to keep Spring Boot MVC features, and you just want to add additional MVC configuration (interceptors, formatters, view controllers etc.) you can add your own @Configuration class of type WebMvcConfigurerAdapter, but without @EnableWebMvc. If you wish to provide custom instances of RequestMappingHandlerMapping, RequestMappingHandlerAdapter or ExceptionHandlerExceptionResolver you can declare a WebMvcRegistrationsAdapter instance providing such components.
+
+If you want to take complete control of Spring MVC, you can add your own @Configuration annotated with @EnableWebMvc.
+
+```java
+@Configuration
+public class myMvcConfig implements WebMvcConfigurer {
+
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/jichen").setViewName("Hello");
+    }
+}
+```
