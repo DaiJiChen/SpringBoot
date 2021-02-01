@@ -355,3 +355,154 @@ public class myMvcConfig implements WebMvcConfigurer {
     }
 }
 ```
+
+
+## RestfulCRUD
+
+### globalization
+
+1）write globalization configuration file
+
+2）use `ResourceBundleMessageSource` to manage those file
+
+3）use `fmt:message`in page to extract resource
+
+
+
+Steps：
+
+1) write globalization configuration file
+
+![resourceBundle](/images/resourceBundle.jpg)
+
+
+
+2) SpringBoot auto configured related logic；
+
+```java
+@ConfigurationProperties(prefix = "spring.messages")
+public class MessageSourceAutoConfiguration {
+    
+    /**
+	 * Comma-separated list of basenames (essentially a fully-qualified classpath
+	 * location), each following the ResourceBundle convention with relaxed support for
+	 * slash based locations. If it doesn't contain a package qualifier (such as
+	 * "org.mypackage"), it will be resolved from the classpath root.
+	 */
+	private String basename = "messages";  
+    //我们的配置文件可以直接放在类路径下叫messages.properties；
+    
+    @Bean
+	public MessageSource messageSource() {
+		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+		if (StringUtils.hasText(this.basename)) {
+            //设置国际化资源文件的基础名（去掉语言国家代码的）
+			messageSource.setBasenames(StringUtils.commaDelimitedListToStringArray(
+					StringUtils.trimAllWhitespace(this.basename)));
+		}
+		if (this.encoding != null) {
+			messageSource.setDefaultEncoding(this.encoding.name());
+		}
+		messageSource.setFallbackToSystemLocale(this.fallbackToSystemLocale);
+		messageSource.setCacheSeconds(this.cacheSeconds);
+		messageSource.setAlwaysUseMessageFormat(this.alwaysUseMessageFormat);
+		return messageSource;
+	}
+```
+
+3) use global variables in pages
+
+![changeEncoding](/images/change%20encoding.jpg)
+
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Signin Template for Bootstrap</title>
+		<!-- Bootstrap core CSS -->
+		<link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.css}" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="asserts/css/signin.css" th:href="@{/asserts/css/signin.css}" rel="stylesheet">
+	</head>
+
+	<body class="text-center">
+		<form class="form-signin" action="dashboard.html">
+			<img class="mb-4" src="asserts/img/bootstrap-solid.svg" th:src="@{/asserts/img/bootstrap-solid.svg}" alt="" width="72" height="72">
+			<h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}"></h1>
+			<label class="sr-only" th:text="#{login.Username}"></label>
+			<input type="text" class="form-control" placeholder="Username" th:placeholder="#{login.Username}" required="" autofocus="">
+			<label class="sr-only" th:text="#{login.Password}"></label>
+			<input type="password" class="form-control" placeholder="Password" th:placeholder="#{login.Password}" required="">
+			<div class="checkbox mb-3">
+				<label>
+          			<input type="checkbox" value="remember-me">[[#{login.RememberMe}]]
+        		</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.Signin}"></button>
+			<p class="mt-5 mb-3 text-muted">© 2020-2021</p>
+			<a class="btn btn-sm" th:href="@{/index.html(l='zh_CN')}">中文</a>
+			<a class="btn btn-sm" th:href="@{/index.html(l='en_US')}">English</a>
+		</form>
+
+	</body>
+```
+
+### By default: springboot switch language according to chrome setting
+
+```java
+@Bean
+        @ConditionalOnMissingBean(
+            name = {"localeResolver"}
+        )
+        public LocaleResolver localeResolver() {
+            if (this.webProperties.getLocaleResolver() == org.springframework.boot.autoconfigure.web.WebProperties.LocaleResolver.FIXED) {
+                return new FixedLocaleResolver(this.webProperties.getLocale());
+            } else if (this.mvcProperties.getLocaleResolver() == org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties.LocaleResolver.FIXED) {
+                return new FixedLocaleResolver(this.mvcProperties.getLocale());
+            } else {
+                AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
+                Locale locale = this.webProperties.getLocale() != null ? this.webProperties.getLocale() : this.mvcProperties.getLocale();
+                localeResolver.setDefaultLocale(locale);
+                return localeResolver;
+            }
+        }
+```
+
+### How to switch language according to our need?
+
+```java
+/**
+ * enable containing location info in url Link
+ */
+public class MyLocaleResolver implements LocaleResolver {
+    @Override
+    public Locale resolveLocale(HttpServletRequest httpServletRequest) {
+        String l = httpServletRequest.getParameter("l");
+        Locale locale = Locale.getDefault();
+
+        if(!StringUtils.isEmpty(l)) {
+            String[] split = l.split("_");
+            locale = new Locale(split[0], split[1]);
+        }
+        return locale;
+    }
+
+    @Override
+    public void setLocale(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Locale locale) {
+
+    }
+}
+```
+
+```java
+ @Bean
+    public LocaleResolver localeResolver(){
+        return new MyLocaleResolver();
+    }
+}
+```
+
