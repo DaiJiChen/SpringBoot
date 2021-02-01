@@ -189,3 +189,169 @@ private Resource getWelcomePage() {
         }
 ```
 
+## thymeleaf
+
+#### Improt starter
+
+```xml
+<properties>
+        <!--	change default thymeleaf version	-->
+	<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
+	<thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
+</properties>
+
+<dependencies>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+</dependencies>
+```
+
+#### expressions
+
+```properties
+Simple expressions:
+    Variable Expressions: ${...}：gt variable；OGNL；
+    		1）、get property or call method of an object
+    		2）、使用内置的基本对象：
+    			#ctx : the context object.
+    			#vars: the context variables.
+                #locale : the context locale.
+                #request : (only in Web Contexts) the HttpServletRequest object.
+                #response : (only in Web Contexts) the HttpServletResponse object.
+                #session : (only in Web Contexts) the HttpSession object.
+                #servletContext : (only in Web Contexts) the ServletContext object.
+                
+                ${session.foo}
+            3）、内置的一些工具对象：
+#execInfo : information about the template being processed.
+#messages : methods for obtaining externalized messages inside variables expressions, in the same way as they would be obtained using #{…} syntax.
+#uris : methods for escaping parts of URLs/URIs
+#conversions : methods for executing the configured conversion service (if any).
+#dates : methods for java.util.Date objects: formatting, component extraction, etc.
+#calendars : analogous to #dates , but for java.util.Calendar objects.
+#numbers : methods for formatting numeric objects.
+#strings : methods for String objects: contains, startsWith, prepending/appending, etc.
+#objects : methods for objects in general.
+#bools : methods for boolean evaluation.
+#arrays : methods for arrays.
+#lists : methods for lists.
+#sets : methods for sets.
+#maps : methods for maps.
+#aggregates : methods for creating aggregates on arrays or collections.
+#ids : methods for dealing with id attributes that might be repeated (for example, as a result of an iteration).
+
+    Selection Variable Expressions: *{...}：
+    	补充：配合 th:object="${session.user}：
+   <div th:object="${session.user}">
+    <p>Name: <span th:text="*{firstName}">Sebastian</span>.</p>
+    <p>Surname: <span th:text="*{lastName}">Pepper</span>.</p>
+    <p>Nationality: <span th:text="*{nationality}">Saturn</span>.</p>
+    </div>
+    
+    Message Expressions: #{...}：
+    Link URL Expressions: @{...}：
+    		@{/order/process(execId=${execId},execType='FAST')}
+    Fragment Expressions: ~{...}：
+    		<div th:insert="~{commons :: main}">...</div>
+    		
+Literals
+      Text literals: 'one text' , 'Another one!' ,…
+      Number literals: 0 , 34 , 3.0 , 12.3 ,…
+      Boolean literals: true , false
+      Null literal: null
+      Literal tokens: one , sometext , main ,…
+Text operations:
+    String concatenation: +
+    Literal substitutions: |The name is ${name}|
+Arithmetic operations:
+    Binary operators: + , - , * , / , %
+    Minus sign (unary operator): -
+Boolean operations:
+    Binary operators: and , or
+    Boolean negation (unary operator): ! , not
+Comparisons and equality:
+    Comparators: > , < , >= , <= ( gt , lt , ge , le )
+    Equality operators: == , != ( eq , ne )
+Conditional operators:
+    If-then: (if) ? (then)
+    If-then-else: (if) ? (then) : (else)
+    Default: (value) ?: (defaultvalue)
+Special tokens:
+    No-Operation: _ 
+```
+
+
+## Spring MVC configuration
+
+https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications
+
+### 1. Spring MVC Auto-Configuration
+
+Spring Boot provides auto-configuration for Spring MVC that works well with most applications.
+
+#### auto-configuration includes:
+
+- Inclusion of ViewResolver: `ContentNegotiatingViewResolver` and `BeanNameViewResolver` beans.
+
+	- `ContentNegotiatingViewResolver` combines all viewResolver
+	
+	- we can add a viewResolver to the container and it will be automatically integrted.
+
+- Support for serving static resources, including support for WebJars.
+
+	- static resource directory and webjars
+
+- Automatic registration of `Converter`, `GenericConverter`, `Formatter` beans.
+
+	- Converter: 转换器; data from page is text, Converter translate it into format we need such as int, boolean, object, etc.
+	
+	- Formatter: 格式化器; string "2017-12-17" --> Data object
+```java
+	@Bean
+        public FormattingConversionService mvcConversionService() {
+            Format format = this.mvcProperties.getFormat();
+            WebConversionService conversionService = new WebConversionService((new DateTimeFormatters())
+	    .dateFormat(format.getDate())
+	    .timeFormat(format.getTime())
+	    .dateTimeFormat(format.getDateTime()));
+	    
+            this.addFormatters(conversionService);
+            return conversionService;
+        }
+	
+	public void addFormatters(FormatterRegistry registry) {
+            ApplicationConversionService.addBeans(registry, this.beanFactory);
+        }
+```
+
+- Support for `HttpMessageConverters`.
+
+	- `HttpMessageConverters` is used by springMVC to convert Http request and response; User -> json; 
+	
+	- `HttpMessageConverters` get all HttpMessageConverter from container. we can add our own HttpMessageConverter to container（@Bean, @Component
+
+- Automatic registration of `MessageCodesResolver` (see below).
+
+- Static `index.html` support.
+
+- Custom `Favicon` support.
+
+- Automatic use of a `ConfigurableWebBindingInitializer` bean.
+
+**org.springframework.boot.autoconfigure**  : all auto configuration for web
+
+If you want to keep Spring Boot MVC features, and you just want to add additional MVC configuration (interceptors, formatters, view controllers etc.) you can add your own @Configuration class of type WebMvcConfigurerAdapter, but without @EnableWebMvc. If you wish to provide custom instances of RequestMappingHandlerMapping, RequestMappingHandlerAdapter or ExceptionHandlerExceptionResolver you can declare a WebMvcRegistrationsAdapter instance providing such components.
+
+If you want to take complete control of Spring MVC, you can add your own @Configuration annotated with @EnableWebMvc.
+
+```java
+@Configuration
+public class myMvcConfig implements WebMvcConfigurer {
+
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/jichen").setViewName("Hello");
+    }
+}
+```
